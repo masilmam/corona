@@ -12,7 +12,7 @@
   <title>Update Kasus Covid-19 | gladibersih.com</title>
 
   <!-- Custom fonts for this template-->
-  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="assets/vendor/fontawesome-free/css/all.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
@@ -33,15 +33,15 @@
           <div class="row mx-auto">
             <!-- start card -->
             <div class="col-md-3 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
+              <div class="card border-left-warning shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Covid-19 Positif</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                      <div class="font-weight-bold text-primary mb-1">Covid-19 Positif</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">798</div>
                     </div>
                     <div class="col-auto">
-                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                      <i class="fas fa-ambulance fa-3x"></i>
                     </div>
                   </div>
                 </div>
@@ -50,15 +50,15 @@
             <!-- end card -->
             <!-- start card -->
             <div class="col-md-3 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
+              <div class="card border-left-secondary shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Earnings (Monthly)</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                      <div class="font-weight-bold text-primary mb-1">Covid-19 Dirawat</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">612</div>
                     </div>
                     <div class="col-auto">
-                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                      <i class="fas fa-hospital-alt fa-3x"></i>
                     </div>
                   </div>
                 </div>
@@ -67,15 +67,15 @@
             <!-- end card -->
             <!-- start card -->
             <div class="col-md-3 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
+              <div class="card border-left-success shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Earnings (Monthly)</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                      <div class="font-weight-bold text-primary mb-1">Sembuh</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">40</div>
                     </div>
                     <div class="col-auto">
-                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                      <i class="fas fa-smile-beam fa-3x"></i>
                     </div>
                   </div>
                 </div>
@@ -84,15 +84,15 @@
             <!-- end card -->
             <!-- start card -->
             <div class="col-md-3 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
+              <div class="card border-left-danger shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Earnings (Monthly)</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                      <div class="font-weight-bold text-primary mb-1">Meninggal</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">31</div>
                     </div>
                     <div class="col-auto">
-                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                      <i class="fas fa-sad-cry fa-3x"></i>
                     </div>
                   </div>
                 </div>
