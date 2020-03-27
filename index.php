@@ -1,3 +1,21 @@
+<?php
+include 'request.php';
+$get = request_get('https://api.kawalcorona.com/indonesia/');
+$positif = $get[0]['positif'];
+$sembuh = $get[0]['sembuh'];
+$meninggal = $get[0]['meninggal'];
+// $hasil = $get[0]['positif'] - $get[0]['sembuh'];
+
+function remove_format($str)
+{
+  $text = str_replace(",", "", $str);
+  return $text;
+}
+
+$rawat = remove_format($positif) - remove_format($sembuh) - remove_format($meninggal);
+$rawat = number_format($rawat, 0, ',', ',');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,7 +56,7 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="font-weight-bold text-primary mb-1">Covid-19 Positif</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">798</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $positif; ?></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-ambulance fa-3x"></i>
@@ -55,7 +73,7 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="font-weight-bold text-primary mb-1">Covid-19 Dirawat</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">612</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $rawat; ?></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-hospital-alt fa-3x"></i>
@@ -72,7 +90,7 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="font-weight-bold text-primary mb-1">Sembuh</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">40</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $sembuh; ?></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-smile-beam fa-3x"></i>
@@ -89,7 +107,7 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="font-weight-bold text-primary mb-1">Meninggal</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">31</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $meninggal; ?></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-sad-cry fa-3x"></i>
