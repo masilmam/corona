@@ -28,6 +28,7 @@ $rawat = number_format($rawat, 0, ',', ',');
   <meta name="author" content="">
 
   <title>Update Kasus Covid-19 | gladibersih.com</title>
+  <link rel="shortcut icon" href="assets/img/fav.png">
 
   <!-- Custom fonts for this template-->
   <link href="assets/vendor/fontawesome-free/css/all.css" rel="stylesheet" type="text/css">
