@@ -35,7 +35,13 @@ $rawat = number_format($rawat, 0, ',', ',');
 
   <!-- Custom styles for this template-->
   <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
-
+  <style>
+    .footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
 </head>
 
 <body class="bg-gradient-info">
@@ -122,7 +128,19 @@ $rawat = number_format($rawat, 0, ',', ',');
         </div>
       </div>
     </div>
+
+
   </div>
+
+  <!-- Footer -->
+  <footer class="sticky-footer bg-white mt-auto footer">
+    <div class="container my-auto">
+      <div class="copyright text-center my-auto">
+        <span><a href="https://gladibersih.com">gladibersih.com</a> &copy; 2020 | Data by <a href="https://kawalcorona.com/">Kawal Corona</a></span>
+      </div>
+    </div>
+  </footer>
+  <!-- End of Footer -->
 
   <!-- Bootstrap core JavaScript-->
   <script src="assets/vendor/jquery/jquery.min.js"></script>
