@@ -43,6 +43,8 @@ $meninggal = number_format($meninggal, 0, ',', ',');
 
   <!-- Custom styles for this template-->
   <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
+  
+  <link href="assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
   <style>
     .footer {
       position: absolute;
@@ -56,7 +58,7 @@ $meninggal = number_format($meninggal, 0, ',', ',');
   <div class="container">
     <!-- Outer Row -->
     <div class="justify-content-center">
-      <div class="card o-hidden border-0 shadow-lg my-5">
+      <div class="card o-hidden border-0 shadow-lg mt-5 mb-3">
         <div class="card-body">
           <div class="text-center mt-4">
             <h1 class="h4 text-gray-900 mb-4">Kasus Covid-19 di Indonesia</h1>
@@ -135,13 +137,52 @@ $meninggal = number_format($meninggal, 0, ',', ',');
 
         </div>
       </div>
+
+      <!-- new card -->
+      <div class="card o-hidden border-0 shadow-lg">
+        <div class="card-body">
+          <div class="text-center mt-4">
+            <h1 class="h4 text-gray-900 mb-3">Kasus Covid-19 Berdasarkan Provinsi</h1>
+          </div>
+
+          <div class="row mx-auto">
+            <div class="table-responsive">
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                  <tr>
+                    <th>Provinsi</th>
+                    <th>Positif</th>
+                    <th>Sembuh</th>
+                    <th>Meninggal</th>
+                  </tr>
+                </thead>
+                <tbody>
+                <?php
+                $getProv = request_get('https://api.kawalcorona.com/indonesia/provinsi/'); 
+                foreach ($getProv as $p) {
+                ?>
+                  <tr>
+                    <td><?= $p['attributes']['Provinsi']; ?></td>
+                    <td><?= $p['attributes']['Kasus_Posi']; ?></td>
+                    <td><?= $p['attributes']['Kasus_Semb']; ?></td>
+                    <td><?= $p['attributes']['Kasus_Meni']; ?></td>
+                  </tr>
+                <?php } ?>
+                </tbody>
+              </table>
+            </div>
+          </div> <!-- end row -->
+
+        </div>
+      </div>
+
     </div>
 
 
   </div>
 
   <!-- Footer -->
-  <footer class="sticky-footer bg-white mt-auto footer">
+  <footer class="sticky-footer bg-white mt-3">
     <div class="container my-auto">
       <div class="copyright text-center my-auto">
         <span><a href="https://gladibersih.com">gladibersih.com</a> &copy; 2020 | Data by <a href="https://kawalcorona.com/">Kawal Corona</a></span>
@@ -159,6 +200,13 @@ $meninggal = number_format($meninggal, 0, ',', ',');
 
   <!-- Custom scripts for all pages-->
   <script src="assets/js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="assets/vendor/datatables/jquery.dataTables.min.js"></script>
+  <script src="assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="assets/js/demo/datatables-demo.js"></script>
 
 </body>
 
