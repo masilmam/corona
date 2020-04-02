@@ -1,10 +1,5 @@
 <?php
 include 'request.php';
-$get = request_get('https://api.kawalcorona.com/indonesia/');
-$positif = $get[0]['positif'];
-$sembuh = $get[0]['sembuh'];
-$meninggal = $get[0]['meninggal'];
-// $hasil = $get[0]['positif'] - $get[0]['sembuh'];
 
 function remove_format($str)
 {
@@ -12,8 +7,20 @@ function remove_format($str)
   return $text;
 }
 
-$rawat = remove_format($positif) - remove_format($sembuh) - remove_format($meninggal);
+$get = request_get('https://api.kawalcorona.com/indonesia/');
+$positif = remove_format($get[0]['positif']);
+$sembuh = remove_format($get[0]['sembuh']);
+$meninggal = remove_format($get[0]['meninggal']);
+$rawat = $positif - $sembuh - $meninggal;
+
+$rate_sembuh = round(($sembuh / $positif) * 100, 2);
+$rate_meninggal = round(($meninggal / $positif) * 100, 2);
+
+$positif = number_format($positif, 0, ',', ',');
 $rawat = number_format($rawat, 0, ',', ',');
+$sembuh = number_format($sembuh, 0, ',', ',');
+$meninggal = number_format($meninggal, 0, ',', ',');
+
 ?>
 
 <!DOCTYPE html>
@@ -97,7 +104,7 @@ $rawat = number_format($rawat, 0, ',', ',');
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="font-weight-bold text-primary mb-1">Sembuh</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $sembuh; ?></div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $sembuh; ?> <small class="ml-1">(<?= $rate_sembuh; ?> %)</small></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-smile-beam fa-3x"></i>
@@ -114,7 +121,7 @@ $rawat = number_format($rawat, 0, ',', ',');
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="font-weight-bold text-primary mb-1">Meninggal</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $meninggal; ?></div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $meninggal; ?> <small class="ml-1">(<?= $rate_meninggal; ?> %)</small></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-sad-cry fa-3x"></i>
