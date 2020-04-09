@@ -208,6 +208,14 @@ $meninggal = number_format($meninggal, 0, ',', ',');
   <!-- Page level custom scripts -->
   <script src="assets/js/demo/datatables-demo.js"></script>
 
+  <script>
+    $('#dataTable').dataTable({
+      "order": [
+        [1, 'desc']
+      ]
+    });
+  </script>
+
 </body>
 
 </html>
