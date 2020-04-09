@@ -43,7 +43,7 @@ $meninggal = number_format($meninggal, 0, ',', ',');
 
   <!-- Custom styles for this template-->
   <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
-  
+
   <link href="assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
   <style>
     .footer {
@@ -157,17 +157,17 @@ $meninggal = number_format($meninggal, 0, ',', ',');
                   </tr>
                 </thead>
                 <tbody>
-                <?php
-                $getProv = request_get('https://api.kawalcorona.com/indonesia/provinsi/'); 
-                foreach ($getProv as $p) {
-                ?>
-                  <tr>
-                    <td><?= $p['attributes']['Provinsi']; ?></td>
-                    <td><?= $p['attributes']['Kasus_Posi']; ?></td>
-                    <td><?= $p['attributes']['Kasus_Semb']; ?></td>
-                    <td><?= $p['attributes']['Kasus_Meni']; ?></td>
-                  </tr>
-                <?php } ?>
+                  <?php
+                  $getProv = request_get('https://api.kawalcorona.com/indonesia/provinsi/');
+                  foreach ($getProv as $p) {
+                  ?>
+                    <tr>
+                      <td><?= $p['attributes']['Provinsi']; ?></td>
+                      <td><?= number_format($p['attributes']['Kasus_Posi'], 0, ',', ','); ?></td>
+                      <td><?= number_format($p['attributes']['Kasus_Semb'], 0, ',', ','); ?></td>
+                      <td><?= number_format($p['attributes']['Kasus_Meni'], 0, ',', ','); ?></td>
+                    </tr>
+                  <?php } ?>
                 </tbody>
               </table>
             </div>
