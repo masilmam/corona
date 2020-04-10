@@ -58,125 +58,136 @@ $meninggal = number_format($meninggal, 0, ',', ',');
   <div class="container">
     <!-- Outer Row -->
     <div class="justify-content-center">
-      <div class="card o-hidden border-0 shadow-lg mt-5 mb-3">
-        <div class="card-body">
-          <div class="text-center mt-4">
-            <h1 class="h4 text-gray-900 mb-4">Kasus Covid-19 di Indonesia</h1>
-          </div>
 
-          <div class="row mx-auto">
-            <!-- start card -->
-            <div class="col-md-3 mb-4">
-              <div class="card border-left-warning shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="font-weight-bold text-primary mb-1">Covid-19 Positif</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $positif; ?></div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-ambulance fa-3x"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- end card -->
-            <!-- start card -->
-            <div class="col-md-3 mb-4">
-              <div class="card border-left-secondary shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="font-weight-bold text-primary mb-1">Covid-19 Dirawat</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $rawat; ?></div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-hospital-alt fa-3x"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- end card -->
-            <!-- start card -->
-            <div class="col-md-3 mb-4">
-              <div class="card border-left-success shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="font-weight-bold text-primary mb-1">Sembuh</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $sembuh; ?> <small class="ml-1">(<?= $rate_sembuh; ?> %)</small></div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-smile-beam fa-3x"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- end card -->
-            <!-- start card -->
-            <div class="col-md-3 mb-4">
-              <div class="card border-left-danger shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="font-weight-bold text-primary mb-1">Meninggal</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $meninggal; ?> <small class="ml-1">(<?= $rate_meninggal; ?> %)</small></div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-sad-cry fa-3x"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- end card -->
-          </div> <!-- end row -->
-
+      <div class="card o-hidden border-0 shadow-lg mt-5 mb-3>
+        <div class=" card-body">
+        <div class="text-center mt-3">
+          <h1 class="h4 text-gray-900 mb-3">World Case</h1>
         </div>
+
+        Konten
       </div>
-
-      <!-- new card -->
-      <div class="card o-hidden border-0 shadow-lg">
-        <div class="card-body">
-          <div class="text-center mt-4">
-            <h1 class="h4 text-gray-900 mb-3">Kasus Covid-19 Berdasarkan Provinsi</h1>
-          </div>
-
-          <div class="row mx-auto">
-            <div class="table-responsive">
-              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead>
-                  <tr>
-                    <th>Provinsi</th>
-                    <th>Positif</th>
-                    <th>Sembuh</th>
-                    <th>Meninggal</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <?php
-                  $getProv = request_get('https://api.kawalcorona.com/indonesia/provinsi/');
-                  foreach ($getProv as $p) {
-                  ?>
-                    <tr>
-                      <td><?= $p['attributes']['Provinsi']; ?></td>
-                      <td><?= number_format($p['attributes']['Kasus_Posi'], 0, ',', ','); ?></td>
-                      <td><?= number_format($p['attributes']['Kasus_Semb'], 0, ',', ','); ?></td>
-                      <td><?= number_format($p['attributes']['Kasus_Meni'], 0, ',', ','); ?></td>
-                    </tr>
-                  <?php } ?>
-                </tbody>
-              </table>
-            </div>
-          </div> <!-- end row -->
-
-        </div>
-      </div>
-
     </div>
+
+    <div class="card o-hidden border-0 shadow-lg mt-3 mb-3">
+      <div class="card-body">
+        <div class="text-center mt-3">
+          <h1 class="h4 text-gray-900 mb-4">Kasus Covid-19 di Indonesia</h1>
+        </div>
+
+        <div class="row mx-auto">
+          <!-- start card -->
+          <div class="col-md-3 mb-4">
+            <div class="card border-left-warning shadow h-100 py-2">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="font-weight-bold text-primary mb-1">Covid-19 Positif</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $positif; ?></div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="fas fa-ambulance fa-3x"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end card -->
+          <!-- start card -->
+          <div class="col-md-3 mb-4">
+            <div class="card border-left-secondary shadow h-100 py-2">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="font-weight-bold text-primary mb-1">Covid-19 Dirawat</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $rawat; ?></div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="fas fa-hospital-alt fa-3x"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end card -->
+          <!-- start card -->
+          <div class="col-md-3 mb-4">
+            <div class="card border-left-success shadow h-100 py-2">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="font-weight-bold text-primary mb-1">Sembuh</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $sembuh; ?> <small class="ml-1">(<?= $rate_sembuh; ?> %)</small></div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="fas fa-smile-beam fa-3x"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end card -->
+          <!-- start card -->
+          <div class="col-md-3 mb-4">
+            <div class="card border-left-danger shadow h-100 py-2">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="font-weight-bold text-primary mb-1">Meninggal</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $meninggal; ?> <small class="ml-1">(<?= $rate_meninggal; ?> %)</small></div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="fas fa-sad-cry fa-3x"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end card -->
+        </div> <!-- end row -->
+
+      </div>
+    </div>
+
+    <!-- new card -->
+    <div class="card o-hidden border-0 shadow-lg">
+      <div class="card-body">
+        <div class="text-center mt-3">
+          <h1 class="h4 text-gray-900 mb-3">Kasus Covid-19 Berdasarkan Provinsi</h1>
+        </div>
+
+        <div class="row ml-4 mr-4 mb-3 mt-3">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>Provinsi</th>
+                  <th>Positif</th>
+                  <th>Sembuh</th>
+                  <th>Meninggal</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php
+                $getProv = request_get('https://api.kawalcorona.com/indonesia/provinsi/');
+                foreach ($getProv as $p) {
+                ?>
+                  <tr>
+                    <td><?= $p['attributes']['Provinsi']; ?></td>
+                    <td><?= number_format($p['attributes']['Kasus_Posi'], 0, ',', ','); ?></td>
+                    <td><?= number_format($p['attributes']['Kasus_Semb'], 0, ',', ','); ?></td>
+                    <td><?= number_format($p['attributes']['Kasus_Meni'], 0, ',', ','); ?></td>
+                  </tr>
+                <?php } ?>
+              </tbody>
+            </table>
+          </div>
+        </div> <!-- end row -->
+
+      </div>
+    </div>
+
+  </div>
 
 
   </div>
