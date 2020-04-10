@@ -45,11 +45,24 @@ $meninggal = number_format($meninggal, 0, ',', ',');
   <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
 
   <link href="assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
   <style>
     .footer {
       position: absolute;
       bottom: 0;
       width: 100%;
+    }
+
+    #mapid {
+      height: 400px;
+      /* width: 100%; */
     }
   </style>
 </head>
@@ -65,7 +78,7 @@ $meninggal = number_format($meninggal, 0, ',', ',');
           <h1 class="h4 text-gray-900 mb-3">World Case</h1>
         </div>
 
-        Konten
+        <div class="ml-4 mr-4 mb-4 mt-3" id="mapid"></div>
       </div>
     </div>
 
@@ -156,7 +169,7 @@ $meninggal = number_format($meninggal, 0, ',', ',');
           <h1 class="h4 text-gray-900 mb-3">Kasus Covid-19 Berdasarkan Provinsi</h1>
         </div>
 
-        <div class="row ml-4 mr-4 mb-3 mt-3">
+        <div class="row ml-4 mr-4 mb-4 mt-3">
           <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
               <thead>
@@ -203,7 +216,7 @@ $meninggal = number_format($meninggal, 0, ',', ',');
   <!-- End of Footer -->
 
   <!-- Bootstrap core JavaScript-->
-  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/jquery/jquery.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
@@ -218,6 +231,9 @@ $meninggal = number_format($meninggal, 0, ',', ',');
 
   <!-- Page level custom scripts -->
   <script src="assets/js/demo/datatables-demo.js"></script>
+
+  <!-- Leaflet maps -->
+  <script src="map.js"></script>
 
   <script>
     $('#dataTable').dataTable({
