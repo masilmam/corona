@@ -75,7 +75,7 @@ $meninggal = number_format($meninggal, 0, ',', ',');
       <div class="card o-hidden border-0 shadow-lg mt-5 mb-3>
         <div class=" card-body">
         <div class="text-center mt-3">
-          <h1 class="h4 text-gray-900 mb-3">World Case</h1>
+          <h1 class="h4 text-gray-900 mb-3">Covid-19 World Case</h1>
         </div>
 
         <div class="ml-4 mr-4 mb-4 mt-3" id="mapid"></div>
@@ -85,12 +85,12 @@ $meninggal = number_format($meninggal, 0, ',', ',');
     <div class="card o-hidden border-0 shadow-lg mt-3 mb-3">
       <div class="card-body">
         <div class="text-center mt-3">
-          <h1 class="h4 text-gray-900 mb-4">Kasus Covid-19 di Indonesia</h1>
+          <h1 class="h4 text-gray-900 mb-3">Kasus Covid-19 di Indonesia</h1>
         </div>
-
+        <hr>
         <div class="row mx-auto">
           <!-- start card -->
-          <div class="col-md-3 mb-4">
+          <div class="col-md-3">
             <div class="card border-left-warning shadow h-100 py-2">
               <div class="card-body">
                 <div class="row no-gutters align-items-center">
@@ -107,7 +107,7 @@ $meninggal = number_format($meninggal, 0, ',', ',');
           </div>
           <!-- end card -->
           <!-- start card -->
-          <div class="col-md-3 mb-4">
+          <div class="col-md-3">
             <div class="card border-left-secondary shadow h-100 py-2">
               <div class="card-body">
                 <div class="row no-gutters align-items-center">
@@ -124,7 +124,7 @@ $meninggal = number_format($meninggal, 0, ',', ',');
           </div>
           <!-- end card -->
           <!-- start card -->
-          <div class="col-md-3 mb-4">
+          <div class="col-md-3">
             <div class="card border-left-success shadow h-100 py-2">
               <div class="card-body">
                 <div class="row no-gutters align-items-center">
@@ -141,7 +141,7 @@ $meninggal = number_format($meninggal, 0, ',', ',');
           </div>
           <!-- end card -->
           <!-- start card -->
-          <div class="col-md-3 mb-4">
+          <div class="col-md-3">
             <div class="card border-left-danger shadow h-100 py-2">
               <div class="card-body">
                 <div class="row no-gutters align-items-center">
@@ -158,14 +158,10 @@ $meninggal = number_format($meninggal, 0, ',', ',');
           </div>
           <!-- end card -->
         </div> <!-- end row -->
+        <hr class="mb-5">
 
-      </div>
-    </div>
-
-    <!-- new card -->
-    <div class="card o-hidden border-0 shadow-lg">
-      <div class="card-body">
-        <div class="text-center mt-3">
+        <!-- start covid-19 provinsi -->
+        <div class="text-center">
           <h1 class="h4 text-gray-900 mb-3">Kasus Covid-19 Berdasarkan Provinsi</h1>
         </div>
 
@@ -196,8 +192,9 @@ $meninggal = number_format($meninggal, 0, ',', ',');
             </table>
           </div>
         </div> <!-- end row -->
+        <!-- end covid-19 provinsi -->
 
-      </div>
+      </div> <!-- end card besar -->
     </div>
 
   </div>
