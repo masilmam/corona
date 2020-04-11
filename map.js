@@ -1,10 +1,15 @@
 $(document).ready(function () {
   const mymap = L.map('mapid').setView([0, 0], 2);
 
-  const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>';
-  const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+  const attribution = 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>';
+  const tileUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaWxtYW1mYXV6aSIsImEiOiJjazh2amlvZWUwbWc5M2VwNjN2bWQ1a2t4In0.5ONwpTqU6pGqx0QXtyoxUg';
   const tiles = L.tileLayer(tileUrl, {
-    attribution
+    attribution,
+    maxZoom: 18,
+    id: 'mapbox/outdoors-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'pk.eyJ1IjoiaWxtYW1mYXV6aSIsImEiOiJjazh2amlvZWUwbWc5M2VwNjN2bWQ1a2t4In0.5ONwpTqU6pGqx0QXtyoxUg'
   });
   tiles.addTo(mymap);
 
@@ -24,16 +29,12 @@ $(document).ready(function () {
           const sembuh = response[i].attributes.Recovered;
           const meninggal = response[i].attributes.Deaths;
 
-          function showPopup() {
-            this.bindPopup(
-              `<b>` + negara + `<br />
-              Positif : </b>` + positif + `<br />
-              <b>Sembuh : </b>` + sembuh + `<br />
-              <b>Meninggal : </b>` + meninggal
-            ).openPopup();
-          }
-
-          $(marker).click(showPopup);
+          marker.bindPopup(
+            `<b>` + negara + `<br />
+            Positif : </b>` + positif + `<br />
+            <b>Sembuh : </b>` + sembuh + `<br />
+            <b>Meninggal : </b>` + meninggal
+          ).openPopup();
         }
       });
     }
