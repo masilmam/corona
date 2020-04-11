@@ -15,25 +15,26 @@ $(document).ready(function () {
     dataType: 'json',
     success: function (response) {
       $.each(response, function (i, data) {
-        const negara = response[i].attributes.Country_Region;
-        const positif = response[i].attributes.Confirmed;
-        const sembuh = response[i].attributes.Recovered;
-        const meninggal = response[i].attributes.Deaths;
-        const lat = response[i].attributes.Lat;
-        const lng = response[i].attributes.Long_;
-        const marker = L.marker([lat, lng], {}).addTo(mymap);
-        marker.bindPopup().openPopup();
+        if (response[i].attributes.Lat != null && response[i].attributes.Long_ != null) {
+          const lat = response[i].attributes.Lat;
+          const lng = response[i].attributes.Long_;
+          const marker = L.marker([lat, lng], {}).addTo(mymap);
+          const negara = response[i].attributes.Country_Region;
+          const positif = response[i].attributes.Confirmed;
+          const sembuh = response[i].attributes.Recovered;
+          const meninggal = response[i].attributes.Deaths;
 
-        function showPopup() {
-          this.bindPopup(
-            `<b>` + negara + `<br />
-            Positif : </b>` + positif + `<br />
-            <b>Sembuh : </b>` + sembuh + `<br />
-            <b>Meninggal : </b>` + meninggal
-          ).openPopup();
+          function showPopup() {
+            this.bindPopup(
+              `<b>` + negara + `<br />
+              Positif : </b>` + positif + `<br />
+              <b>Sembuh : </b>` + sembuh + `<br />
+              <b>Meninggal : </b>` + meninggal
+            ).openPopup();
+          }
+
+          $(marker).click(showPopup);
         }
-
-        $(marker).click(showPopup);
       });
     }
   });
