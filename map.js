@@ -35,6 +35,8 @@ $(document).ready(function () {
             <b>Sembuh : </b>` + sembuh + `<br />
             <b>Meninggal : </b>` + meninggal
           ).openPopup();
+
+          marker.bindPopup().closePopup();
         }
       });
     }
